@@ -1,0 +1,12 @@
+@import 'mixins';
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  .main-wrapper {
+    @include flex($justify: flex-start, $align: flex-start);
+    width: 100%;
+  }
+}

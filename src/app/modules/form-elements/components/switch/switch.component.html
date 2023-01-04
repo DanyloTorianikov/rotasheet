@@ -1,0 +1,9 @@
+<mat-slide-toggle
+  class="switch"
+  (ngModelChange)="toggle($event)"
+  [(ngModel)]="value"
+>
+  <div class="switch__content">
+    {{ label }}
+  </div>
+</mat-slide-toggle>

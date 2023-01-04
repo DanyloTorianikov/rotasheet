@@ -1,0 +1,16 @@
+@mixin flex($direction: row, $align: center, $justify: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin section {
+  @include flex($justify: flex-start, $align: flex-start, $direction: column);
+  box-sizing: border-box;
+  background-color: var(--white);
+  padding: 12px;
+  gap: 10px;
+  border-radius: 10px;
+}

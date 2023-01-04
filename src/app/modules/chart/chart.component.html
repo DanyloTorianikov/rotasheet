@@ -1,0 +1,35 @@
+<div class="chart-header">
+  <div class="icon-container">
+    <mat-icon [svgIcon]="icon"></mat-icon>
+  </div>
+  <div class="title-container">
+    <span class="title">{{ title }}</span>
+    <span class="subtitle">{{ subtitle }}</span>
+  </div>
+</div>
+
+<div *ngIf="type !== 'number'; else numberChart" [ngClass]="type" id="chart-container">
+  <canvas [id]="chartId"></canvas>
+  <div *ngIf="totalTitle" class="total">
+    <span class="title">{{ totalTitle }}</span>
+    <span class="value">${{ total | shortNumber }}</span>
+  </div>
+</div>
+
+<ng-template #numberChart>
+  <div class="chart">
+    <div class="items">
+      <div class="item" *ngFor="let value of chart.values; let index = index; let last = last">
+        <span class="value-{{ index }}">{{ value }}</span>
+        <span class="separator" *ngIf="!last">:</span>
+      </div>
+    </div>
+
+    <div class="labels">
+      <div class="label" *ngFor="let label of chart.labels; let index = index">
+        <div class="color-block value-{{ index }}"></div>
+        <span class="text">{{ label }}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

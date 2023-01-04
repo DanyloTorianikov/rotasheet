@@ -1,0 +1,50 @@
+@import 'mixins';
+
+button {
+  @include flex($justify: space-between);
+  box-sizing: border-box;
+  transition: all .1s ease-in-out;
+  border-radius: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &.green {
+    background-color: var(--light-green-90);
+    color: var(--dark-gray-80);
+    -webkit-text-fill-color: var(--dark-gray-80);
+    border: 1px solid var(--green);
+
+    &:hover:not([disabled]) {
+      background-color: var(--light-green-80);
+    }
+
+    &:active:not([disabled]) {
+      background-color: var(--light-green-70);
+    }
+
+    &:disabled {
+      background-color: var(--dark-gray);
+    }
+  }
+
+  &.medium {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    height: 42px;
+    padding: 12px;
+
+    mat-icon {
+      height: 20px;
+      width: 20px;
+    }
+
+    .right {
+      margin-left: 20px;
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+@import "mixins";
+
+:host {
+  @include flex($direction: column, $align: flex-start, $justify: flex-start);
+  gap: 10px;
+
+  .title {
+    color: var(--dark-gray-80);
+    font-size: 24px;
+  }
+
+  mat-list {
+    @include flex;
+    padding-top: 0;
+
+    .mat-mdc-list-item {
+      width: fit-content;
+      height: fit-content;
+      padding: 0;
+
+      &.inactive {
+        cursor: pointer;
+
+        .text {
+          color: var(--blue) !important;
+        }
+
+        &:hover .text {
+          text-decoration: underline;
+        }
+      }
+
+      .text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: var(--dark-gray-80);
+      }
+
+      .separator {
+        padding-left: 8px;
+        padding-right: 4px;
+        color: var(--dark-gray-60);
+      }
+    }
+  }
+}

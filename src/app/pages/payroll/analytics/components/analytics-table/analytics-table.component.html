@@ -1,0 +1,31 @@
+<div class="title">
+  {{ title }}
+</div>
+
+<div class="mat-elevation-z8">
+  <table [dataSource]="dataSource" mat-table class="custom-table">
+    <ng-container matColumnDef="text">
+      <th *matHeaderCellDef mat-header-cell>
+        <span>{{ columnName }}</span>
+      </th>
+      <td *matCellDef="let element" mat-cell>
+        <span>{{ element.text }} </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+      <th *matHeaderCellDef mat-header-cell>
+        <span>Amount</span>
+      </th>
+      <td *matCellDef="let element" mat-cell>
+        <span>{{ element.amount | currency: '$':'symbol':'1.1-1' }} </span>
+      </td>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+  </table>
+</div>
+<div class="total">
+  <span class="title">Total</span>
+  <span class="value">{{ total | currency: '$':'symbol':'1.1-1' }}</span>
+</div>

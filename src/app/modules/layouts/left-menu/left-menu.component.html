@@ -1,0 +1,22 @@
+<div class="main-menu">
+  <div class="search">
+    <app-input [placeholder]="'Search'" [icon]="'search'" [iconPosition]="iconPosition"></app-input>
+  </div>
+  <div class="main-menu-item" (click)="changeMainMenu(item.name)" [class.active]="item.name === activeMainItem"
+    *ngFor="let item of mainMenuItems">
+    <mat-icon [svgIcon]="item.icon"></mat-icon>
+    <span class="label">{{ item.label }}</span>
+  </div>
+  <app-switch [label]="'Dark Mode Off'"></app-switch>
+  <div class="settings">
+    <mat-icon svgIcon="settings"></mat-icon>
+    <span class="label">Settings</span>
+  </div>
+  <div class="copyright">Copyright. © Rota Sheet 2022 </div>
+</div>
+<div class="sub-menu">
+  <div class="sub-menu-item" [routerLink]="item.route" [class.active]="item.name === activeSubItem"
+    *ngFor="let item of selectedSubMenu">
+    <span class="label">{{ item.label }}</span>
+  </div>
+</div>

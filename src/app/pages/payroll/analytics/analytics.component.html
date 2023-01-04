@@ -1,0 +1,38 @@
+<ng-container [formGroup]="analyticsForm">
+  <div class="header">
+    <app-title [breadcrumbList]="breadcrumbsList" [title]="'Employee Performance'"></app-title>
+    <div class="filters">
+      <app-select [label]="'Company'" [placeholder]="'Select'"></app-select>
+      <app-select formControlName="currency" [options]="currencies" [label]="'Currency'"
+        [placeholder]="'Select'"></app-select>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="datepickers">
+      <app-datepicker formControlName="from" [label]="'From'"></app-datepicker>
+      <app-datepicker formControlName="to" [label]="'To'"></app-datepicker>
+    </div>
+    <div class="buttons">
+      <app-button [isFullWidth]="true" [text]="'Print'" [icon]="'print'"></app-button>
+      <app-button [isFullWidth]="true" [text]="'Export'" [icon]="'upload'"></app-button>
+    </div>
+  </div>
+</ng-container>
+
+
+<app-info-block [items]="analyticsInfo"></app-info-block>
+
+<div class="content">
+  <app-chart [id]="7" [type]="'polarArea'" [icon]="'round-chart'" [title]="'Variable Pay'"
+    [subtitle]="'This graph shows total salaries for the selected period'" [chart]="charts.variable"></app-chart>
+  <app-analytics-table [dataSource]="totalSalaries" [title]="'Total Salaries (AGS)'"
+    [columnName]="'Compensations'"></app-analytics-table>
+
+  <app-chart [id]="8" [type]="'horizontal_bar'" [icon]="'volume-v2'" [title]="'Total Cost of Employment By Department'"
+    [subtitle]="'This graph shows Total Cost of Employment By Department for selected period'"
+    [chart]="charts.cost"></app-chart>
+
+  <app-analytics-table [dataSource]="totalBenefits" [title]="'Total Benefits'"
+    [columnName]="'Benefits'"></app-analytics-table>
+</div>

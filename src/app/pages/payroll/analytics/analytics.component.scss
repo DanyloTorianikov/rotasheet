@@ -1,0 +1,53 @@
+@import 'mixins';
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 32px 30px;
+
+  .header {
+    @include flex($justify: space-between);
+
+    .filters {
+      @include flex($direction: column, $align: flex-end);
+      gap: 10px
+    }
+  }
+
+  .actions {
+    @include flex($justify: space-between);
+    padding-top: 30px;
+
+    .datepickers,
+    .buttons {
+      @include flex;
+      gap: 20px;
+
+      app-button {
+        width: 130px;
+      }
+    }
+  }
+
+  app-info-block {
+    margin: 30px 0 0;
+  }
+
+
+  .content {
+    @include flex($align: flex-start, $justify: flex-start, $wrap: wrap);
+    gap: 20px;
+    width: 100%;
+
+    app-chart {
+      margin-top: 30px;
+      width: calc(70% - 10px);
+    }
+
+    app-analytics-table {
+      margin-top: 30px;
+      width: calc(30% - 10px);
+    }
+  }
+}

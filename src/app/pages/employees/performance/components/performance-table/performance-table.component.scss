@@ -1,0 +1,30 @@
+@import "mixins";
+
+:host {
+  @include section;
+
+  .title {
+    font-size: 24px;
+    color: var(--dark-gray-80);
+    padding: 15px 18px;
+    box-sizing: border-box;
+  }
+
+  .rating {
+    span {
+      @include flex($justify: flex-end);
+      color: var(--dark-gray-50);
+    }
+  }
+
+  .mat-elevation-z8 {
+    height: 600px;
+    width: 100%;
+    overflow: auto;
+    box-shadow: none;
+
+    .mat-column-name {
+      height: 70px;
+    }
+  }
+}

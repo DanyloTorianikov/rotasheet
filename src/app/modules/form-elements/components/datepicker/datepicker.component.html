@@ -1,0 +1,9 @@
+<div class="label" *ngIf="label">{{ label }}<span *ngIf="isRequired" class="is-required">*</span></div>
+<mat-form-field [ngClass]="controlColor" [class.error]="isError" [class.is-opened]="isOpened" appearance="outline">
+  <mat-datepicker-toggle matPrefix [for]="picker">
+    <mat-icon svgIcon="calendar-v2" matDatepickerToggleIcon></mat-icon>
+  </mat-datepicker-toggle>
+  <input [disabled]="!!disabled" matInput #datePickerInput [placeholder]="placeholder" [matDatepicker]="picker"
+    [max]="today" (click)="picker.open()" required [(ngModel)]="value">
+  <mat-datepicker (opened)="onPickerOpen()" (closed)="onPickerClose()" #picker disabled="false"></mat-datepicker>
+</mat-form-field>

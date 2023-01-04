@@ -1,0 +1,12 @@
+<div class="title">{{ title }}</div>
+
+<div class="tabs">
+  <div class="tab" *ngFor="let tab of tabs">
+    <div class="main-info">
+      <div class="main-value">{{ tab.mainValue }}</div>
+      <div class="text">{{ tab.text }}</div>
+      <div class="sub-value">{{ tab.subValue }}</div>
+    </div>
+    <div class="info">{{ tab.info }}</div>
+  </div>
+</div>

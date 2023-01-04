@@ -1,0 +1,87 @@
+@import "mixins";
+
+:host {
+  @include flex($justify: flex-start);
+  background: var(--white);
+  height: 60px;
+
+  .logo {
+    height: 100%;
+  }
+
+  app-input {
+    width: 270px;
+    margin: 0 10px;
+  }
+
+  .info-container {
+    @include flex;
+    margin: 0 25px 0 auto;
+
+    mat-icon {
+      color: var(--dark-gray);
+      margin: 0 16.5px;
+    }
+
+    .notification {
+      @include flex($justify: flex-start);
+      height: 100%;
+      position: relative;
+
+      &-counter {
+        position: absolute;
+        background: var(--red);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: var(--white);
+        font-size: 12px;
+        text-align: center;
+        top: 5px;
+        right: 9px;
+      }
+    }
+
+    .user {
+      @include flex;
+
+      .name {
+        padding-right: 10px
+      }
+
+      .avatar {
+        @include flex;
+        position: relative;
+        background: var(--light-gray);
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+
+        mat-icon {
+          min-width: 20px;
+          min-height: 20px;
+        }
+
+        .menu {
+          @include flex;
+          position: absolute;
+          bottom: 3px;
+          right: -5px;
+          width: 20px;
+          height: 20px;
+          border: 1px solid var(--dark-gray);
+          border-radius: 50%;
+          background-color: white;
+
+          mat-icon {
+            margin: -4px 0 0;
+            width: 12px;
+            height: 12px;
+            min-width: initial;
+            min-height: initial;
+          }
+        }
+      }
+    }
+  }
+}

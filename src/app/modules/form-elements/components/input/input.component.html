@@ -1,0 +1,7 @@
+<div class="label" *ngIf="label">{{ label }}</div>
+<mat-form-field [ngClass]="controlColor" [class.error]="isError" appearance="outline">
+  <mat-icon matSuffix *ngIf="!!icon && iconPosition === 'right'" [svgIcon]="icon"></mat-icon>
+  <mat-icon matPrefix *ngIf="!!icon && iconPosition === 'left'" [svgIcon]="icon"></mat-icon>
+  <input type="text" [disabled]="!!disabled"
+    [placeholder]="placeholder" [ngModel]="value" (ngModelChange)="onChange($event.trim())" matInput type="text" />
+</mat-form-field>

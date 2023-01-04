@@ -1,0 +1,63 @@
+@import 'mixins';
+
+:host {
+  @include flex($direction: column);
+  background: var(--white);
+  padding: 37px 50px;
+  box-sizing: border-box;
+
+  .title {
+    font-size: 24px;
+    color: var(--dark-gray-80);
+    padding-bottom: 20px
+  }
+
+  .tabs {
+    @include flex($justify: flex-start);
+    gap: 20px;
+    max-width: 1200px;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0 auto;
+    left: -1px;
+
+    .tab {
+      @include flex($direction: column);
+      gap: 10px;
+      box-sizing: border-box;
+
+      .main-info {
+        @include flex($direction: column);
+        gap: 10px;
+        min-width: 250px;
+        padding: 10px;
+        box-sizing: border-box;
+        background: var(--light-gray-70);
+        border-radius: 10px;
+
+        .main-value {
+          font-size: 30px;
+          line-height: 30px;
+          color: var(--green);
+        }
+
+        .text {
+          font-size: 20px;
+          color: var(--dark-gray-80);
+        }
+
+        .sub-value {
+          font-size: 20px;
+          color: var(--blue-90);
+        }
+      }
+
+      .info {
+        padding: 20px 0;
+        font-size: 17px;
+        color: var(--dark-gray-50);
+      }
+    }
+  }
+}

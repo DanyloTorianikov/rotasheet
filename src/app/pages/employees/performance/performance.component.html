@@ -1,0 +1,36 @@
+<app-title [breadcrumbList]="breadcrumbsList" [title]="'Employee Performance'"></app-title>
+
+<div class="filters">
+  <app-select [label]="'Financial Year'" [placeholder]="'Select'"></app-select>
+  <app-select [label]="'Company'" [placeholder]="'Select'"></app-select>
+</div>
+
+<app-info-block [items]="performanceInfo"></app-info-block>
+
+<div class="content">
+  <app-chart [id]="1" [type]="'bar'" [icon]="'volume'" [title]="'Employee by Rating'"
+    [subtitle]="'This graph shows employees by rating'" [chart]="charts.bar"></app-chart>
+
+  <app-chart [id]="2" [type]="'doughnut'" [icon]="'round-chart'" [title]="'Overall Bonus by Rating'"
+    [subtitle]="'This graph shows overall bonus by rating'" [chart]="charts.overall"
+    [totalTitle]="'Total Bonuses'"></app-chart>
+
+  <app-chart [id]="3" [type]="'doughnut'" [icon]="'round-chart'" [title]="'Average Bonus by Employee/Rating'"
+    [subtitle]="'This graph shows average bonus by employee/rating'" [chart]="charts.bonus"
+    [totalTitle]="'Total Average Bonuses'"></app-chart>
+
+  <app-chart [id]="4" [type]="'number'" [icon]="'round-chart'" [title]="'Average Bonus by Bonus/Rating'"
+    [subtitle]="'This graph shows overall bonus by rating'" [chart]="charts.number"></app-chart>
+
+  <app-performance-table [dataSource]="performanceAbove"
+    [title]="'Top 10 performance above threshold'"></app-performance-table>
+
+  <app-performance-table [dataSource]="performanceBelow"
+    [title]="'Top 10 performance below threshold'"></app-performance-table>
+
+  <app-chart class="main-chart" [id]="5" [type]="'common_doughnut'" [icon]="'round-chart'"
+    [title]="'Average Bonus by Employee/Rating'" [subtitle]="'This graph shows average bonus by employee/rating'"
+    [chart]="charts.rating" [totalTitle]="'Total Average Bonuses'"></app-chart>
+
+  <app-tabs [title]="'Average Performance Rating by Organisation'" [tabs]="tabs"></app-tabs>
+</div>

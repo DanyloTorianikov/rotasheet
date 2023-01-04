@@ -1,0 +1,26 @@
+:host::ng-deep {
+  .label {
+    margin-top: 7px;
+  }
+
+  .mat-mdc-form-field {
+    &-icon-suffix {
+      display: none;
+    }
+
+    &-infix {
+      padding: 13px 0 7px 0px !important;
+    }
+
+    &-icon-prefix {
+      .mat-mdc-icon-button {
+        padding: 12px 10px 12px 0;
+
+        mat-icon {
+          height: 26px !important;
+          filter: var(--filter-light-gray-80);
+        }
+      }
+    }
+  }
+}
